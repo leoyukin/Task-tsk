@@ -1,0 +1,89 @@
+body {
+    background-color: hsla(208, 100%, 97%, 0.713);
+}
+
+.top-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0%;
+    margin: 0;
+}
+
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+}
+
+.top-right span {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.top-right button {
+    font-family: monospace;
+    border-radius: 15%;
+    font-weight: 600;
+    margin: 2.5px;
+    cursor: pointer;
+}
+
+#highBtn {
+    background-color: hsla(0, 100%, 50%, 0.800);
+}
+
+#mediumBtn {
+    background-color: hsla(39, 75%, 50%, 0.800);
+
+}
+
+#lowBtn {
+    background-color: hsla(207, 100%, 50%, 0.800);
+
+}
+
+#allBtn {
+    background: linear-gradient(hsl(0, 100%, 50%, 0.700),
+            hsla(39, 75%, 50%, 0.700),
+            hsl(207, 100%, 50%, 0.700));
+}
+
+#darkMode {
+    margin-left: auto;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 5px;
+    color: hsl(208, 100%, 98%);
+    background-color: hsl(0, 0%, 0%);
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+#hlist {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 3px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+}
+
+.column {
+    background: gray;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
