@@ -28,6 +28,7 @@ body {
     font-weight: 600;
     margin: 2.5px;
     cursor: pointer;
+    color: white;
 }
 
 #highBtn {
@@ -61,13 +62,14 @@ body {
     cursor: pointer;
 }
 
+#hname {
+    font-family: "Sedgwick Ave Display", cursive;
+}
+
 #hlist {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border-radius: 3px;
+    font-family: "Sedgwick Ave Display", cursive;
     font-size: 1.3rem;
     font-weight: bold;
-    border: none;
-    border-radius: 5px;
     text-align: center;
 }
 
@@ -85,5 +87,76 @@ body {
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    gap: 8px
+    gap: 8px;
+    min-height: 70dvh;
+}
+
+.container-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+
+}
+
+.cont-title {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: hsla(208, 100%, 97%, 0.945);
+
+}
+
+.cont-count {
+    display: flex;
+    font-family: monospace;
+    background: white;
+    -ms-flex-align: flex-end;
+    padding-inline: 0.85%;
+    border: 1.5px solid;
+    border-color: hsl(0, 0%, 0%);
+    border-radius: 50%;
+}
+
+.card {
+    border: 2.5px solid;
+    border-radius: 10px;
+    background: hsl(0, 0%, 60%);
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+}
+
+.priority {
+    font-weight: 800;
+    font-family: monospace;
+    padding-left: 1px;
+    border: 2px solid rgb(85, 85, 85);
+    border-radius: 8px;
+    padding-inline: 1.5%;
+}
+
+.high {
+    color: hsl(0, 55%, 45%);
+    background: hsl(0, 55%, 70%);
+}
+
+.medium {
+    color: hsl(39, 55%, 45%);
+    background: hsl(39, 55%, 70%);
+}
+
+.low {
+    color: hsl(207, 55%, 45%);
+    background: hsl(207, 55%, 70%);
+}
+
+.fa-solid.fa-music {
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
 }
