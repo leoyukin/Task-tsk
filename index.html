@@ -22,7 +22,7 @@
             <button id="darkMode">Dark Mode 🌒</button>
         </div>
         <div class="top-right">
-            <span id="filter">Filter: </span>
+            <span id="filter">Filter</span>
             <button id="highBtn">High</button>
             <button id="mediumBtn">Medium</button>
             <button id="lowBtn">Low</button>
@@ -35,7 +35,10 @@
     <div class="board">
         <div class="column">
             <div class="container-head">
-                <span class="cont-title">To Do</span>
+                <div class="cont-title">
+                    <span class="dot dto-do"></span>
+                    <span class="cont-title">To Do</span>
+                </div>
                 <span class="cont-count">1</span>
             </div>
             <div class="container-cards">
@@ -55,7 +58,10 @@
         </div>
         <div class="column">
             <div class="container-head">
-                <span class="cont-title">Progress</span>
+                <div class="cont-title">
+                    <span class="dot dprogress"></span>
+                    <span class="cont-title">Progress</span>
+                </div>
                 <span class="cont-count">2</span>
             </div>
             <div class="container-cards">
@@ -70,11 +76,14 @@
                     </div>
                 </div>
             </div>
-            <button class="addBtn">+ New task</button>
+            <button class="addBtn"><span id="plusplus">+</span> New task</button>
         </div>
         <div class="column">
             <div class="container-head">
-                <span class="cont-title">Done</span>
+                <div class="cont-title">
+                    <span class="dot ddone"></span>
+                    <span class="cont-title">Done</span>
+                </div>
                 <span class="cont-count">3</span>
             </div>
             <div class="container-cards">
