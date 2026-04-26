@@ -36,11 +36,11 @@ body {
     cursor: pointer;
     color: white;
     padding: 5px 10px;
-    transition: ease-in-out;
+    transition: background ease-in-out;
 }
 
 .top-right button:hover {
-    filter: brightness(1.02) contrast(1.02);
+    filter: brightness(1.2) contrast(1.2);
     transform: scale(110%);
 }
 
@@ -50,24 +50,24 @@ body {
 }
 
 #highBtn {
-    background-color: hsl(0, 100%, 95%);
-    color: hsl(0, 55%, 45%);
+    background-color: hsl(0, 100%, 75%);
+    color: hsl(0, 55%, 20%);
 }
 
 #mediumBtn {
-    background-color: hsl(38, 76%, 95%);
-    color: hsl(32, 94%, 13%);
+    background-color: hsl(38, 76%, 75%);
+    color: hsl(32, 94%, 20%);
 
 }
 
 #lowBtn {
-    background-color: hsl(208, 100%, 95%);
-    color: hsl(207, 55%, 45%);
+    background-color: hsl(208, 100%, 75%);
+    color: hsl(207, 55%, 20%);
 
 }
 
 #allBtn {
-    background-color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 65%);
     color: hsl(0, 0%, 20%);
     font-size: 0.75em;
 }
@@ -82,7 +82,7 @@ body {
     background-color: hsl(0, 0%, 0%);
     padding: 8px 8px;
     cursor: pointer;
-    transition: ease-in-out;
+    transition: background ease-in-out;
 }
 
 #darkMode:hover {
@@ -109,6 +109,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: 2.5px black line-through;
 }
 
 .board {
@@ -212,11 +213,17 @@ body {
     margin-bottom: 10px;
     overflow: auto;
     box-shadow: 0 2px 2px 2px hsl(0, 0%, 40%);
+    transition: background 1s ease;
 }
 
-.prog {
-    border-left: 4.5px solid hsla(56, 100%, 75%, 0.75);
+.card:hover {
+    filter: brightness(105%) contrast(105%);
+    transform: translateY(-2.5px)
+}
 
+.card:active {
+    filter: brightness(85%) contrast(85%);
+    transform: translateY(5px);
 }
 
 .card-title {
@@ -225,6 +232,7 @@ body {
     white-space: normal;
     color: white;
     padding: 8px 10px;
+    padding-bottom: 25px;
     border-bottom: 2px solid black;
 }
 
@@ -263,26 +271,25 @@ body {
 }
 
 .addBtn {
-    padding-bottom: auto;
-    margin-top: auto;
     justify-content: center;
     font-family: Times, serif;
-    background: hsl(0, 0%, 42%);
+    background: hsl(0, 0%, 65%);
     color: hsl(0, 0%, 100%);
     border-radius: 6px;
     padding: 8px;
     font-weight: 500;
     box-shadow: 0 5px 5px 1px black;
+    transition: ease;
 }
 
 .addBtn:hover {
-    background: hsl(0, 0%, 53%);
-    color: hsl(0, 0%, 90%);
+    filter: brightness(0.80) contrast(0.80);
+    transform: scale(1.01);
 }
 
 .addBtn:active {
-    background: hsl(0, 0%, 32%);
-    color: hsl(0, 0%, 70%);
+    filter: brightness(0.60) contrast(0.60);
+    transform: scale(98%);
 }
 
 .comple {
