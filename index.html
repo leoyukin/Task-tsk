@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/a90dd967a4.js" crossorigin="anonymous" defer></script>
+    <title>Task Tsk</title>
+</head>
+
+<body>
+
+    <!--Logo, Top Right Btns, and Dark Mode-->
+
+    <header>
+        <div class="top-left">
+            <h1 id="hname" class="top-left">Tsk</h1>
+            <span id="hlist" class="top-left">List</span>
+            <button id="darkMode">Dark Mode 🌒</button>
+        </div>
+        <div class="top-right">
+            <span id="filter">Filter</span>
+            <button id="highBtn">High</button>
+            <button id="mediumBtn">Medium</button>
+            <button id="lowBtn">Low</button>
+            <button id="allBtn">All</button>
+        </div>
+    </header>
+
+    <!--Boards, Columns, and Cards-->
+
+    <div class="board">
+        <div class="column">
+            <div class="container-head">
+                <div class="cont-title">
+                    <span class="dot dto-do"></span>
+                    <span class="cont-title">To Do</span>
+                </div>
+                <span class="cont-count">1</span>
+            </div>
+            <div class="container-cards">
+                <div class="card td">
+                    <p class="card-title">Design for my first project</p>
+                    <span class="priority low">Low</span>
+                </div>
+
+                <div class="card td">
+                    <p class="card-title">Add new features</p>
+                    <span class="priority medium">Medium</span>
+
+                </div>
+
+                <!-- <div class="td">
+                    <input type="text" placeholder="New Task..." class="card-title newTsk" />
+                    <div class="inpBtns">
+                        <button class="confirmBtn nbtn">Confirm</button>
+                        <button class="cancelBtn nbtn">Cancel</button>
+                    </div>
+                    <div class="divi"></div>
+                    <button class="priority Unknown">Unknown</button>
+                </div>
+            -->
+            </div>
+            <button class="addBtn">+ New task</button>
+        </div>
+        <div class="column">
+            <div class="container-head">
+                <div class="cont-title">
+                    <span class="dot dprogress"></span>
+                    <span class="cont-title">Progress</span>
+                </div>
+                <span class="cont-count">2</span>
+            </div>
+            <div class="container-cards">
+                <div class="card prog">
+                    <p class="card-title">A little something</p>
+                    <span class="priority high">High</span>
+                </div>
+                <div class="container-cards">
+                    <div class="card prog">
+                        <p class="card-title">Get to the point</p>
+                        <span class="priority low">Low</span>
+                    </div>
+                </div>
+            </div>
+            <button class="addBtn" id="newBtn">+New task</button>
+        </div>
+        <div class="column">
+            <div class="container-head">
+                <div class="cont-title">
+                    <span class="dot ddone"></span>
+                    <span class="cont-title">Done</span>
+                </div>
+                <span class="cont-count">3</span>
+            </div>
+            <div class="container-cards">
+                <div class="comple">
+                    <p class="card-title compl">At least we tried</p>
+                    <span class="priority medium">Medium</span>
+                </div>
+
+            </div>
+            <div class="container-cards">
+                <div class="dmemo">
+                    <p class="memo-tsk">Completed tasks <br>will appear here</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="music">
+        <button class="fa-solid fa-music">
+        </button>
+    </div>
+
+
+</body>
+
+</html>

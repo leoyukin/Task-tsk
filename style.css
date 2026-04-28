@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
+
+body {
+    background-color: hsl(246, 100%, 92%);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.top-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0%;
+    margin: 0;
+}
+
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: center;
+
+}
+
+.top-right span {
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding: 5px 10px;
+}
+
+.top-right button {
+    font-family: monospace;
+    border-radius: 15%;
+    font-style: italic;
+    font-weight: 800;
+    margin: 2.5px;
+    cursor: pointer;
+    color: white;
+    padding: 5px 10px;
+    transition: background ease-in-out;
+}
+
+.top-right button:hover {
+    filter: brightness(1.2) contrast(1.2);
+    transform: scale(110%);
+}
+
+.top-right button:active {
+    transform: scale(90%);
+    filter: brightness(0.70) contrast(0.75);
+}
+
+#highBtn {
+    background-color: hsl(0, 100%, 75%);
+    color: hsl(0, 55%, 20%);
+}
+
+#mediumBtn {
+    background-color: hsl(38, 76%, 75%);
+    color: hsl(32, 94%, 20%);
+
+}
+
+#lowBtn {
+    background-color: hsl(208, 100%, 75%);
+    color: hsl(207, 55%, 20%);
+
+}
+
+#allBtn {
+    background-color: hsl(0, 0%, 65%);
+    color: hsl(0, 0%, 20%);
+    font-size: 0.75em;
+}
+
+#darkMode {
+    margin-left: auto;
+    font-size: 200;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: hsl(0, 0%, 0%);
+    padding: 8px 8px;
+    cursor: pointer;
+    transition: background ease-in-out;
+}
+
+#darkMode:hover {
+    filter: brightness(1.02) contrast(1.02);
+    transform: scale(105%);
+}
+
+#darkMode:active {
+    filter: brightness(0.85) contrast(0.85);
+    transform: scale(85%);
+    color: hsl(0, 0%, 85%);
+}
+
+#hname {
+    font-family: "Sedgwick Ave Display", cursive;
+}
+
+#hlist {
+    font-family: "Sedgwick Ave Display", cursive;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(hsl(263, 45%, 65%), hsl(259, 35%, 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: 2.5px black line-through;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.column {
+    display: flex;
+    flex: auto;
+    overflow-y: auto;
+    background: hsl(259, 15%, 68%);
+    border-radius: 10px;
+    padding: 12px;
+    height: 80dvh;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2.5px 2.5px 2.5px hsl(0, 0%, 20%);
+}
+
+.column::-webkit-scrollbar {
+    display: none;
+}
+
+.container-head {
+    display: flex;
+    margin-bottom: 25px;
+    justify-content: space-between;
+
+}
+
+.cont-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: hsl(0, 0%, 100%);
+
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.dto-do {
+    background: hsl(0, 0%, 55%);
+}
+
+.dot.dprogress {
+    background: hsl(60, 100%, 80%);
+    animation: blink;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: running;
+}
+
+.dot.ddone {
+    background-color: hsl(120, 100%, 80%);
+    animation: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: running;
+}
+
+@keyframes blink {
+    50% {
+        filter: brightness(0.75) contrast(0.75);
+    }
+
+    ;
+}
+
+.cont-count {
+    font-family: monospace;
+    background: white;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card,
+.td,
+.prog,
+.comple,
+.dmemo {
+    min-width: 0;
+    border: 2.0px solid;
+    border-radius: 10px;
+    background: hsl(259, 15%, 60%);
+    padding: 12px;
+    margin-bottom: 10px;
+    overflow: auto;
+    box-shadow: 0 2px 2px 2px hsl(0, 0%, 15%);
+    transition: background 1s ease;
+}
+
+.card:hover {
+    filter: brightness(105%) contrast(105%);
+    transform: translateY(-2.5px)
+}
+
+.card:active {
+    filter: brightness(85%) contrast(85%);
+    transform: translateY(5px);
+}
+
+.card-title {
+    word-break: break-word;
+    font-family: serif;
+    white-space: normal;
+    color: white;
+    padding: 8px 10px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid black;
+}
+
+.newTsk {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    width: 90%;
+    min-height: 35px;
+    border-radius: 5px;
+    border: 3.5px solid black;
+    box-shadow: 0 1.2px 1.2px 1.2px black;
+    background: hsl(272, 100%, 95%);
+    font-size: medium;
+}
+
+.newTsk::placeholder {
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    color: hsl(270, 60%, 20%);
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.newTsk:focus {
+    outline: none;
+    box-shadow: 0 0px 0px 3px black;
+}
+
+.inpBtns,
+.nbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8.5px;
+    margin-top: 1px;
+    padding: 5px;
+    gap: 2.5px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.divi {
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+}
+
+
+.nbtn {
+    border: 3.5px solid black;
+    letter-spacing: 0.5px;
+    font-weight: 680;
+}
+
+.confirmBtn {
+    margin-left: auto;
+    background: hsl(120, 25%, 60%);
+    color: hsl(120, 25%, 15%);
+}
+
+.confirmBtn:hover,
+.cancelBtn:hover {
+    transform: translateY(-3px) scale(102%);
+    font-size: 101%;
+    filter: brightness(1.15) contrast(1.15);
+}
+
+.cancelBtn {
+    margin-right: 25px;
+    background: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 15%);
+}
+
+
+.priority {
+    font-weight: 800;
+    font-family: monospace;
+    padding-left: 1px;
+    border: 2px solid rgb(85, 85, 85);
+    border-radius: 8px;
+    padding-inline: 1.5%;
+}
+
+.high {
+    color: hsl(0, 55%, 45%);
+    background: hsl(0, 100%, 95%);
+}
+
+.medium {
+    color: hsl(32, 94%, 13%);
+    background: hsl(38, 76%, 95%);
+}
+
+.low {
+    color: hsl(207, 55%, 45%);
+    background: hsl(208, 100%, 95%);
+}
+
+.fa-solid.fa-music {
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+}
+
+.addBtn {
+    justify-content: center;
+    font-family: Times, serif;
+    background: hsl(259, 15%, 55%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 6px;
+    padding: 8px;
+    font-weight: 500;
+    box-shadow: 0 5px 5px 1px black;
+    transition: background 1s ease;
+}
+
+.addBtn:hover {
+    filter: brightness(90%) contrast(90%);
+    transform: scale(1.01);
+}
+
+.addBtn:active {
+    filter: brightness(75%) contrast(75%);
+    transform: scale(98%);
+}
+
+.comple {
+    filter: opacity(0.5) brightness(0.90);
+}
+
+.comple:hover,
+.compl:hover {
+    filter: opacity(1) brightness(1);
+    text-decoration: none;
+}
+
+.compl {
+    text-decoration: 2px white line-through;
+}
+
+
+.dmemo {
+    border-style: dashed;
+    margin-top: auto;
+    background: transparent;
+    text-align: center;
+    opacity: 0.65;
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 650;
+}
