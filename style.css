@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
+
 body {
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(246, 100%, 92%);
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     border-radius: 10px;
@@ -105,7 +107,7 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
-    background: linear-gradient(hsla(240, 100%, 50%, 0.76), hsla(300, 100%, 25%, 0.76));
+    background: linear-gradient(hsl(263, 45%, 65%), hsl(259, 35%, 70%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -115,7 +117,7 @@ body {
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
     padding: 20px;
 }
 
@@ -123,7 +125,7 @@ body {
     display: flex;
     flex: auto;
     overflow-y: auto;
-    background: hsl(0, 0%, 75%);
+    background: hsl(259, 15%, 68%);
     border-radius: 10px;
     padding: 12px;
     height: 80dvh;
@@ -204,15 +206,16 @@ body {
 .card,
 .td,
 .prog,
-.comple {
+.comple,
+.dmemo {
     min-width: 0;
     border: 2.0px solid;
     border-radius: 10px;
-    background: hsl(0, 0%, 70%);
+    background: hsl(259, 15%, 60%);
     padding: 12px;
     margin-bottom: 10px;
     overflow: auto;
-    box-shadow: 0 2px 2px 2px hsl(0, 0%, 40%);
+    box-shadow: 0 2px 2px 2px hsl(0, 0%, 15%);
     transition: background 1s ease;
 }
 
@@ -235,6 +238,77 @@ body {
     padding-bottom: 25px;
     border-bottom: 2px solid black;
 }
+
+.newTsk {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    width: 90%;
+    min-height: 35px;
+    border-radius: 5px;
+    border: 3.5px solid black;
+    box-shadow: 0 1.2px 1.2px 1.2px black;
+    background: hsl(272, 100%, 95%);
+    font-size: medium;
+}
+
+.newTsk::placeholder {
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    color: hsl(270, 60%, 20%);
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.newTsk:focus {
+    outline: none;
+    box-shadow: 0 0px 0px 3px black;
+}
+
+.inpBtns,
+.nbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8.5px;
+    margin-top: 1px;
+    padding: 5px;
+    gap: 2.5px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.divi {
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+}
+
+
+.nbtn {
+    border: 3.5px solid black;
+    letter-spacing: 0.5px;
+    font-weight: 680;
+}
+
+.confirmBtn {
+    margin-left: auto;
+    background: hsl(120, 25%, 60%);
+    color: hsl(120, 25%, 15%);
+}
+
+.confirmBtn:hover,
+.cancelBtn:hover {
+    transform: translateY(-3px) scale(102%);
+    font-size: 101%;
+    filter: brightness(1.15) contrast(1.15);
+}
+
+.cancelBtn {
+    margin-right: 25px;
+    background: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 15%);
+}
+
 
 .priority {
     font-weight: 800;
@@ -273,27 +347,27 @@ body {
 .addBtn {
     justify-content: center;
     font-family: Times, serif;
-    background: hsl(0, 0%, 65%);
+    background: hsl(259, 15%, 55%);
     color: hsl(0, 0%, 100%);
     border-radius: 6px;
     padding: 8px;
     font-weight: 500;
     box-shadow: 0 5px 5px 1px black;
-    transition: ease;
+    transition: background 1s ease;
 }
 
 .addBtn:hover {
-    filter: brightness(0.80) contrast(0.80);
+    filter: brightness(90%) contrast(90%);
     transform: scale(1.01);
 }
 
 .addBtn:active {
-    filter: brightness(0.60) contrast(0.60);
+    filter: brightness(75%) contrast(75%);
     transform: scale(98%);
 }
 
 .comple {
-    filter: opacity(0.6) brightness(0.90);
+    filter: opacity(0.5) brightness(0.90);
 }
 
 .comple:hover,
