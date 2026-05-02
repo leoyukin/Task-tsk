@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="index.js" defer></script>
-    <script src="https://kit.fontawesome.com/a90dd967a4.js" crossorigin="anonymous" defer></script>
     <title>Task Tsk</title>
 </head>
 
@@ -45,21 +45,28 @@
                 <div class="card td">
                     <div class="toptitle">
                         <p class="card-title">Wait a bit</p>
-                        <button class="prop edit">📝</button>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
                     </div>
                     <div class="divi"></div>
                     <div class="bottitle">
                         <span class="priority low">Low</span>
-                        <button class="prop delete">🗑️</button>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
 
                 <div class="card td">
-                    <p class="card-title">Add new features</p>
-                    <span class="priority medium">Medium</span>
-
+                    <div class="toptitle">
+                        <p class="card-title">Add new features</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="bottitle">
+                        <span class="priority medium">Medium</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
-
                 <div class="td">
                     <input type="text" placeholder="New Task..." class="card-title newTsk" />
                     <div class="inpBtns">
