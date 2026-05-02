@@ -141,8 +141,6 @@ body {
 .container-head {
     display: flex;
     margin-bottom: 25px;
-    justify-content: space-between;
-
 }
 
 .cont-title {
@@ -150,13 +148,17 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    border: 1px solid hsl(0, 0%, 0%);
+    border: 0.5px solid hsl(259, 15%, 15%);
     border-radius: 50%;
     display: inline-block;
 }
@@ -167,39 +169,32 @@ body {
 
 .dot.dprogress {
     background: hsl(60, 100%, 80%);
-    animation: blink;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: running;
 }
 
 .dot.ddone {
     background-color: hsl(120, 100%, 80%);
-    animation: blink;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: running;
 }
 
 @keyframes blink {
     50% {
-        filter: brightness(0.75) contrast(0.75);
+        filter: brightness(0.55) contrast(0.55);
+        transform: scale(90%);
     }
+
 
     ;
 }
 
 .cont-count {
     font-family: monospace;
-    background: white;
     width: 20px;
     height: 20px;
-    font-size: 15px;
-    border: 1px solid hsl(0, 0%, 20%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(0, 0%, 100%);
+    margin-left: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 
@@ -207,7 +202,8 @@ body {
 .td,
 .prog,
 .comple,
-.dmemo {
+.dmemo,
+.added {
     min-width: 0;
     border: 2.0px solid;
     border-radius: 10px;
@@ -230,6 +226,7 @@ body {
 }
 
 .card-title {
+    display: flex;
     word-break: break-word;
     font-family: serif;
     white-space: normal;
@@ -435,14 +432,14 @@ body {
     width: 30px;
     font-size: 20px;
     border-radius: 50%;
-    margin-bottom: 40px;
+    margin-bottom: 2.5px;
     justify-content: center;
     align-items: center;
     display: flex;
     text-align: center;
-    border: hsl(41, 78%, 10%);
+    border: hsl(259, 15%, 15%);
     background: hsl(41, 78%, 45%);
-    color: hsl(41, 78%, 15%);
+    color: hsl(41, 50%, 15%);
 }
 
 .delete {
@@ -452,10 +449,11 @@ body {
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    margin-top: 25px;
+    margin-top: 2.5px;
     justify-content: center;
     align-items: center;
-    border: hsl(0, 65%, 10%);
+    border: hsl(259, 15%, 15%);
+    color: hsl(0, 50%, 10%);
     background: hsl(0, 65%, 45%);
 }
 
