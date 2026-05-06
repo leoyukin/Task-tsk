@@ -7,8 +7,28 @@ const cardtitlee = document.querySelector(".card-title")
 const edit = document.querySelectorAll(".edit");
 const dele = document.querySelectorAll(".delete");
 const inputt = document.querySelector(".inptext");
+const darkMode = document.getElementById("darkMode");
+const savedTheme = localStorage.getItem('theme');
 let isactive = false;
 
+
+darkMode.addEventListener("click", () => {
+    document.body.classList.toggle('dark');
+
+    if (document.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        darkMode.textContent = 'Light Mode';
+    }
+    else {
+        localStorage.setItem('theme', 'light');
+        darkMode.textContent = 'Dark Mode';
+    }
+});
+
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    darkMode.textContent = 'Light Mode';
+}
 
 pcont1.addEventListener("click", (event) => {
     if (event.target.closest('.delete')) {
@@ -81,140 +101,10 @@ pcont1.addEventListener("click", (event) => {
 
 
 
-/*pcont1.addEventListener("click", (event) => {
-    const todo = event.target.closest('.card', '.td');
-    if (isactive) {
-        todo.classList.add("active");
-        return isactive = false;
-    }
-    else if (!isactive) {
-        return isactive = true;
-    }
-});*/
-/*if (todo) {
-    todo.addEventListener("click", (event) => {
-        const activecard = document.querySelector(".active");
-        const currentcard = event.currentTarget;
-        todo.classList.add("active");
-
-        if (currentcard && !activecard && proptog === true) {
-            todo.classList.add("active");
-            edit.forEach(edi => {
-                edi.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    editTask()
-                });
-            });
-            dele.forEach(del => {
-                del.addEventListener("click", function () {
-                    deleteTask();
-                });
-            });
-            return proptog = false;
-        }
-        else {
-            return proptog = true
-        }
-    });*/
-
-/*todo.addEventListener("dblclick", (event) => {
-    const activecard = document.querySelector(".active");
-    const currentcard = event.currentTarget;
-    const input = todo.querySelector(".inptext");
-    const cardtitle = currentcard.querySelector(".card-title")
-
-    if (currentcard && activecard && proptog === true && cardtitle.style.display !== 'none') {
-        todo.classList.remove("active");
-    }
-});*/
-
-//});
-
-/*todo.forEach(td => {
-    td.addEventListener("click", (event) => {
-        const activecard = document.querySelector(".active");
-        const currentcard = event.currentTarget;
- 
-        if (currentcard && !activecard && proptog === true) {
-            td.classList.add("active");
-            edit.forEach(edi => {
-                edi.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    editTask()
-                });
-            });
-            dele.forEach(del => {
-                del.addEventListener("click", function () {
-                    deleteTask();
-                });
-            });
-        }
-    });
-})*/
-
-/*todo.forEach(td => {
-    td.addEventListener("dblclick", (event) => {
-        const activecard = document.querySelector(".active");
-        const currentcard = event.currentTarget;
-        const input = td.querySelector(".inptext");
- 
-        if (currentcard && activecard && proptog === true && input.value !== "") {
-            td.classList.remove("active");
-        }
-    })
-})*/
-
 addBtn.addEventListener("click", function () {
     showinput();
 });
 
-/*function deleteTask(event) {
-    const remove = event.target.closest('.active')
-    if (remove) {
-        remove.remove();
-    }
-}*/
-
-/*function editTask() {
-    const card = document.querySelector(".active")
-    const text = card.querySelector(".card-title");
-    const input = card.querySelector(".inptext");
-    const emptyinput = " ";
-
-    input.value = text.textContent;
-    text.style.display = 'none';
-    input.style.display = 'block';
-    input.focus;
-
-    if (input.value.trim() !== "" && input.value.trim() !== " ") {
-        input.addEventListener("keydown", (e) => {
-            if (e.key === 'Enter' && input.value.trim() !== "") {
-
-                text.textContent = input.value;
-
-                input.style.display = 'none';
-                text.style.display = 'block';
-            }
-
-
-        });
-    }
-    else if (input.value.trim() !== "" && input.value.trim() !== emptyinput) {
-        input.addEventListener("blur", () => {
-
-            text.textContent = input.value;
-
-            input.style.display = 'none';
-            text.style.display = 'block';
-        });
-    }
-    else {
-        showToast('Please enter a task!');
-        input.focus;
-    }
-
-}
-    */
 
 function showinput() {
     addBtn.style.display = 'none';
