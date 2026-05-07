@@ -1,6 +1,7 @@
 const addBtn = document.querySelector(".addBtn");
 let cardscont = document.querySelector(".container-cards");
-const pcont1 = document.getElementById("container1")
+const pcont1 = document.getElementById("container1");
+const pcont2 = document.getElementById("container2");
 let todo = document.querySelectorAll(".td");
 const inputBtn = document.querySelector(".inpBtns");
 const cardtitlee = document.querySelector(".card-title")
@@ -9,6 +10,7 @@ const dele = document.querySelectorAll(".delete");
 const inputt = document.querySelector(".inptext");
 const darkMode = document.getElementById("darkMode");
 const savedTheme = localStorage.getItem('theme');
+const addBtn2 = document.querySelector("#newBtn2");
 let isactive = false;
 
 
@@ -105,6 +107,63 @@ addBtn.addEventListener("click", function () {
     showinput();
 });
 
+addBtn2.addEventListener("click", function () {
+    showinput2();
+});
+
+function showinput2() {
+    addBtn2.style.display = 'none';
+    const inputBoxx = document.createElement('div');
+    inputBoxx.classList.add('added');
+    inputBoxx.innerHTML = `
+                <div class="added">
+                    <input type="text" placeholder="New Task..." class="card-title newTsk" id="ntask" />
+                    <div class="inpBtns">
+                        <button class="confirmBtn nbtn">Confirm</button>
+                        <button class="cancelBtn nbtn">Cancel</button>
+                    </div>
+                    <div class="divi"></div>
+                    <button class="priority unknown" id="unkBtn">Priority</button>
+                    <div class="priorBtn">
+                        <button class="priority low pbtn">Low</button>
+                        <button class="priority medium pbtn">Medium</button>
+                        <button class="priority high pbtn">High</button>
+                    </div>
+                </div>
+        `;
+
+
+    pcont2.appendChild(inputBoxx);
+
+    inputBoxx.querySelectorAll(".pbtn").forEach(btn => {
+        btn.style.display = 'none';
+    });
+
+    document.getElementById("ntask").focus();
+
+    const getprior2 = showBtn2(inputBoxx);
+
+    inputBoxx.querySelector('.confirmBtn').addEventListener("click", function () {
+        const prior = getprior2();
+        createCard2(inputBoxx, prior);
+    });
+
+    inputBoxx.querySelector('.cancelBtn').addEventListener("click", function () {
+        cancelCard2(inputBoxx);
+    });
+
+    document.getElementById("ntask").addEventListener("keydown", function (e) {
+        const prior = getprior2();
+        if (e.key === 'Enter') {
+            createCard2(inputBoxx, prior)
+        };
+        if (e.key === 'Escape') {
+            cancelCard2(inputBoxx);
+        };
+    })
+}
+
+
 
 function showinput() {
     addBtn.style.display = 'none';
@@ -158,6 +217,45 @@ function showinput() {
     })
 }
 
+function createCard2(inputBoxx, prior) {
+    const taskName = document.querySelector("#ntask");
+    const task = taskName.value
+    const pri = prior.toLowerCase();
+
+    if (task.trim() === "") {
+        showToast('Please enter a task');
+        return;
+    }
+    if (prior === "None") {
+        showToast('Please select a priority')
+        return;
+    }
+    else {
+        const card = document.createElement('div');
+        card.innerHTML = `
+                        <div class="card prog">
+                    <div class="toptitle">
+                        <p class="card-title">${task}</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="bottitle">
+                        <span class="priority ${pri}">${prior}</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+    `;
+
+        pcont2.appendChild(card);
+        pcont2.insertBefore(card, inputBoxx);
+
+        inputBoxx.remove();
+        addBtn2.style.display = 'block';
+    }
+
+}
+
 function createCard(inputBox, prior) {
     const taskName = document.querySelector("#ntask");
     const task = taskName.value
@@ -200,6 +298,11 @@ function createCard(inputBox, prior) {
 function cancelCard(inputBox) {
     inputBox.remove();
     addBtn.style.display = 'block';
+}
+
+function cancelCard2(inputBoxx) {
+    inputBoxx.remove();
+    addBtn2.style.display = 'block';
 }
 
 function showToast(message) {
@@ -267,6 +370,65 @@ function showBtn(inputBox) {
     });
 
     return function getprior() {
+        return prior;
+    };
+}
+
+function showBtn2(inputBoxx) {
+    const unknown = inputBoxx.querySelector(".unknown");
+    const low = inputBoxx.querySelector(".pbtn.low");
+    const med = inputBoxx.querySelector(".pbtn.medium");
+    const high = inputBoxx.querySelector(".pbtn.high");
+    const alls = inputBoxx.querySelectorAll(".pbtn");
+    let prior = "None";
+
+    unknown.style.display = '';
+
+    alls.forEach(all => {
+        all.style.display = 'inline-block';
+
+    });
+
+    low.addEventListener("click", () => {
+        if (med.style.display === 'inline-block' && high.style.display === 'inline-block') {
+            med.style.display = 'none';
+            high.style.display = 'none';
+            prior = "Low";
+        }
+        else {
+            med.style.display = 'inline-block';
+            high.style.display = 'inline-block';
+            prior = "None";
+        };
+    });
+
+    med.addEventListener("click", () => {
+        if (low.style.display === 'inline-block' && high.style.display === 'inline-block') {
+            low.style.display = 'none';
+            high.style.display = 'none';
+            prior = "Medium";
+        }
+        else {
+            low.style.display = 'inline-block';
+            high.style.display = 'inline-block';
+            prior = "None";
+        };
+    });
+
+    high.addEventListener("click", () => {
+        if (low.style.display === 'inline-block' && med.style.display === 'inline-block') {
+            low.style.display = 'none';
+            med.style.display = 'none';
+            prior = "High";
+        }
+        else {
+            med.style.display = 'inline-block';
+            low.style.display = 'inline-block';
+            prior = "None";
+        };
+    });
+
+    return function getprior2() {
         return prior;
     };
 }

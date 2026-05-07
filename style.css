@@ -7,9 +7,13 @@
     --bg-third: hsl(0, 0%, 0%);
     --text-primary: hsl(0, 0%, 10%);
     --text-secondary: hsl(0, 0%, 95%);
-    --card-bg: #ffffff;
     --border-color: rgba(255, 255, 255, 0.1);
     --text-secondary2: rgb(0, 0, 0);
+    --column-bg: hsl(259, 15%, 68%);
+    --cont-title: hsl(0, 0%, 100%);
+    --card-bg: hsl(259, 15%, 60%);
+    --new-btn: hsl(272, 100%, 95%);
+    --add-btn: hsl(259, 15%, 55%);
 }
 
 body {
@@ -21,13 +25,17 @@ body {
 }
 
 body.dark {
-    --bg-primary: hsl(0, 0%, 10%);
+    --bg-primary: hsl(0, 0%, 5%);
     --bg-secondary: #2a2535;
-    --bg-third: hsl(0, 0%, 95%);
-    --text-primary: #ffffff;
+    --bg-third: hsl(0, 0%, 85%);
+    --text-primary: hsl(0, 0%, 85%);
     --text-secondary: hsl(0, 0%, 15%);
-    --card-bg: #322d40;
-    --border-color: var(--border-color);
+    --border-color: hsl(0, 0%, 55%);
+    --column-bg: hsl(259, 15%, 22%);
+    --cont-title: hsl(0, 0%, 85%);
+    --card-bg: hsl(259, 15%, 15%);
+    --new-btn: hsl(272, 100%, 75%);
+    --add-btn: hsl(259, 15%, 25%);
 }
 
 .top-left {
@@ -154,7 +162,7 @@ body.dark {
     display: flex;
     flex: auto;
     overflow-y: auto;
-    background: hsl(259, 15%, 68%);
+    background: var(--column-bg);
     border-radius: 10px;
     padding: 12px;
     height: 80dvh;
@@ -176,7 +184,7 @@ body.dark {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: flex-start;
     align-items: flex-start;
-    color: hsl(0, 0%, 100%);
+    color: var(--cont-title);
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -220,7 +228,7 @@ body.dark {
     height: 20px;
     font-weight: 600;
     font-size: 14px;
-    color: hsl(0, 0%, 100%);
+    color: var(--cont-title);
     margin-left: 10px;
     justify-content: flex-start;
     align-items: flex-start;
@@ -236,7 +244,7 @@ body.dark {
     min-width: 0;
     border: 2.0px solid;
     border-radius: 10px;
-    background: hsl(259, 15%, 60%);
+    background: var(--card-bg);
     padding: 12px;
     margin-bottom: 10px;
     overflow: auto;
@@ -273,7 +281,7 @@ body.dark {
     border-radius: 5px;
     border: 3.5px solid black;
     box-shadow: 0 1.2px 1.2px 1.2px black;
-    background: hsl(272, 100%, 95%);
+    background: var(--new-btn);
     font-size: medium;
 }
 
@@ -395,7 +403,7 @@ body.dark {
 .addBtn {
     justify-content: center;
     font-family: Times, serif;
-    background: hsl(259, 15%, 55%);
+    background: var(--add-btn);
     color: hsl(0, 0%, 100%);
     border-radius: 6px;
     padding: 8px;
