@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="index.js" defer></script>
-    <script src="https://kit.fontawesome.com/a90dd967a4.js" crossorigin="anonymous" defer></script>
     <title>Task Tsk</title>
 </head>
 
@@ -33,7 +33,7 @@
     <!--Boards, Columns, and Cards-->
 
     <div class="board">
-        <div class="column">
+        <div class="column column1">
             <div class="container-head">
                 <div class="cont-title">
                     <span class="dot dto-do"></span>
@@ -41,28 +41,32 @@
                 </div>
                 <span class="cont-count">1</span>
             </div>
-            <div class="container-cards">
+            <div class="cont-todo container-cards" id="container1">
                 <div class="card td">
-                    <p class="card-title">Design for my first project</p>
-                    <span class="priority low">Low</span>
-                </div>
-
-                <div class="card td">
-                    <p class="card-title">Add new features</p>
-                    <span class="priority medium">Medium</span>
-
-                </div>
-
-                <!-- <div class="td">
-                    <input type="text" placeholder="New Task..." class="card-title newTsk" />
-                    <div class="inpBtns">
-                        <button class="confirmBtn nbtn">Confirm</button>
-                        <button class="cancelBtn nbtn">Cancel</button>
+                    <div class="toptitle">
+                        <p class="card-title">Wait a bit</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
                     </div>
                     <div class="divi"></div>
-                    <button class="priority Unknown">Unknown</button>
+                    <div class="bottitle">
+                        <span class="priority low">Low</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
-            -->
+
+                <div class="card td">
+                    <div class="toptitle">
+                        <p class="card-title">Add new features</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="bottitle">
+                        <span class="priority medium">Medium</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
             </div>
             <button class="addBtn">+ New task</button>
         </div>
@@ -74,19 +78,33 @@
                 </div>
                 <span class="cont-count">2</span>
             </div>
-            <div class="container-cards">
+            <div class="cont-prog container-cards" id="container2">
                 <div class="card prog">
-                    <p class="card-title">A little something</p>
-                    <span class="priority high">High</span>
+                    <div class="toptitle">
+                        <p class="card-title">Add Something</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="bottitle">
+                        <span class="priority high">High</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
-                <div class="container-cards">
-                    <div class="card prog">
+                <div class="card prog">
+                    <div class="toptitle">
                         <p class="card-title">Get to the point</p>
+                        <input type="text" class="inptext" />
+                        <button class="prop edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="bottitle">
                         <span class="priority low">Low</span>
+                        <button class="prop delete"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
             </div>
-            <button class="addBtn" id="newBtn">+New task</button>
+            <button class="addBtn" id="newBtn2">+ New task</button>
         </div>
         <div class="column">
             <div class="container-head">
@@ -96,18 +114,15 @@
                 </div>
                 <span class="cont-count">3</span>
             </div>
-            <div class="container-cards">
+            <div class="container-cards" id="container3">
                 <div class="comple">
                     <p class="card-title compl">At least we tried</p>
                     <span class="priority medium">Medium</span>
                 </div>
 
             </div>
-            <div class="container-cards">
-                <div class="dmemo">
-                    <p class="memo-tsk">Completed tasks <br>will appear here</p>
-                </div>
-
+            <div class="dmemo">
+                <p class="memo-tsk">Completed tasks<br>will appear here</p>
             </div>
 
         </div>
@@ -116,6 +131,7 @@
         <button class="fa-solid fa-music">
         </button>
     </div>
+    <div class="toast" id="toast"></div>
 
 
 </body>

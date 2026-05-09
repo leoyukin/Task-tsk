@@ -1,10 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
 
+
+:root {
+    --bg-primary: hsl(246, 100%, 92%);
+    --bg-secondary: #f5f5f5;
+    --bg-third: hsl(0, 0%, 0%);
+    --text-primary: hsl(0, 0%, 10%);
+    --text-secondary: hsl(0, 0%, 95%);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-secondary2: rgb(0, 0, 0);
+    --column-bg: hsl(259, 15%, 68%);
+    --cont-title: hsl(0, 0%, 100%);
+    --card-bg: hsl(259, 15%, 60%);
+    --new-btn: hsl(272, 100%, 95%);
+    --add-btn: hsl(259, 15%, 55%);
+    --music-btn: hsl(0, 0%, 0%);
+}
+
 body {
-    background-color: hsl(246, 100%, 92%);
+    background-color: var(--bg-primary);
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     border-radius: 10px;
+    transition: background 0.25s ease-in-out;
+}
+
+body.dark {
+    --bg-primary: hsl(0, 0%, 5%);
+    --bg-secondary: #2a2535;
+    --bg-third: hsl(0, 0%, 85%);
+    --text-primary: hsl(0, 0%, 85%);
+    --text-secondary: hsl(0, 0%, 15%);
+    --border-color: hsl(0, 0%, 55%);
+    --column-bg: hsl(259, 15%, 22%);
+    --cont-title: hsl(0, 0%, 85%);
+    --card-bg: hsl(259, 15%, 15%);
+    --new-btn: hsl(272, 100%, 75%);
+    --add-btn: hsl(259, 15%, 25%);
+    --music-btn: hsl(0, 0%, 85%);
 }
 
 .top-left {
@@ -27,6 +60,10 @@ body {
     font-size: 1.2rem;
     font-weight: 200;
     padding: 5px 10px;
+}
+
+#filter {
+    color: var(--text-primary)
 }
 
 .top-right button {
@@ -80,8 +117,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
     border: none;
     border-radius: 8px;
-    color: white;
-    background-color: hsl(0, 0%, 0%);
+    color: var(--text-secondary);
+    background-color: var(--bg-third);
     padding: 8px 8px;
     cursor: pointer;
     transition: background ease-in-out;
@@ -100,6 +137,8 @@ body {
 
 #hname {
     font-family: "Sedgwick Ave Display", cursive;
+    color: var(--text-primary);
+    transition: background 0.2s ease-in;
 }
 
 #hlist {
@@ -125,13 +164,13 @@ body {
     display: flex;
     flex: auto;
     overflow-y: auto;
-    background: hsl(259, 15%, 68%);
+    background: var(--column-bg);
     border-radius: 10px;
     padding: 12px;
     height: 80dvh;
     flex-direction: column;
     gap: 8px;
-    box-shadow: 0 2.5px 2.5px 2.5px hsl(0, 0%, 20%);
+    box-shadow: 0 2.5px 2.5px 2.5px hsl(259, 15%, 12%);
 }
 
 .column::-webkit-scrollbar {
@@ -141,22 +180,24 @@ body {
 .container-head {
     display: flex;
     margin-bottom: 25px;
-    justify-content: space-between;
-
 }
 
 .cont-title {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: flex-start;
     align-items: flex-start;
-    color: hsl(0, 0%, 100%);
+    color: var(--cont-title);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    border: 1px solid hsl(0, 0%, 0%);
+    border: 0.5px solid hsl(259, 15%, 15%);
     border-radius: 50%;
     display: inline-block;
 }
@@ -167,39 +208,32 @@ body {
 
 .dot.dprogress {
     background: hsl(60, 100%, 80%);
-    animation: blink;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: running;
 }
 
 .dot.ddone {
     background-color: hsl(120, 100%, 80%);
-    animation: blink;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: running;
 }
 
 @keyframes blink {
     50% {
-        filter: brightness(0.75) contrast(0.75);
+        filter: brightness(0.55) contrast(0.55);
+        transform: scale(90%);
     }
+
 
     ;
 }
 
 .cont-count {
     font-family: monospace;
-    background: white;
     width: 20px;
     height: 20px;
-    font-size: 15px;
-    border: 1px solid hsl(0, 0%, 0%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--cont-title);
+    margin-left: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 
@@ -207,15 +241,16 @@ body {
 .td,
 .prog,
 .comple,
-.dmemo {
+.dmemo,
+.added {
     min-width: 0;
     border: 2.0px solid;
     border-radius: 10px;
-    background: hsl(259, 15%, 60%);
+    background: var(--card-bg);
     padding: 12px;
     margin-bottom: 10px;
     overflow: auto;
-    box-shadow: 0 2px 2px 2px hsl(0, 0%, 15%);
+    box-shadow: 0 2px 2px 2px hsl(259, 15%, 15%);
     transition: background 1s ease;
 }
 
@@ -230,13 +265,12 @@ body {
 }
 
 .card-title {
+    display: flex;
     word-break: break-word;
     font-family: serif;
     white-space: normal;
     color: white;
-    padding: 8px 10px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid black;
+    padding-bottom: 10px;
 }
 
 .newTsk {
@@ -249,7 +283,7 @@ body {
     border-radius: 5px;
     border: 3.5px solid black;
     box-shadow: 0 1.2px 1.2px 1.2px black;
-    background: hsl(272, 100%, 95%);
+    background: var(--new-btn);
     font-size: medium;
 }
 
@@ -301,6 +335,7 @@ body {
     transform: translateY(-3px) scale(102%);
     font-size: 101%;
     filter: brightness(1.15) contrast(1.15);
+    cursor: pointer;
 }
 
 .cancelBtn {
@@ -309,6 +344,29 @@ body {
     color: hsl(0, 0%, 15%);
 }
 
+.pbtn:hover {
+    transform: scale(110%) translateY(-4px);
+    filter: brightness(1.1px) contrast(1.1px);
+    font-size: 110%;
+    box-shadow: 4px 2.5px 1.5px 1px hsl(259, 15%, 20%);
+    animation: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+
+}
+
+.pbtn {
+    margin-top: 10px;
+    margin-right: 8px;
+    transition: brightness 0.5 ease-in-out;
+}
+
+.pbtn:active {
+    transform: scale(95%);
+    filter: brightness(80%) contrast(80%);
+}
 
 .priority {
     font-weight: 800;
@@ -336,6 +394,7 @@ body {
 
 .fa-solid.fa-music {
     position: fixed;
+    color: var(--music-btn);
     bottom: 3px;
     right: 3px;
     cursor: pointer;
@@ -347,18 +406,20 @@ body {
 .addBtn {
     justify-content: center;
     font-family: Times, serif;
-    background: hsl(259, 15%, 55%);
+    background: var(--add-btn);
     color: hsl(0, 0%, 100%);
     border-radius: 6px;
     padding: 8px;
     font-weight: 500;
-    box-shadow: 0 5px 5px 1px black;
+    box-shadow: 0 5px 5px 1px hsl(259, 15%, 15%);
     transition: background 1s ease;
+    letter-spacing: 1.5px;
 }
 
 .addBtn:hover {
     filter: brightness(90%) contrast(90%);
     transform: scale(1.01);
+    cursor: pointer;
 }
 
 .addBtn:active {
@@ -382,12 +443,90 @@ body {
 
 
 .dmemo {
-    border-style: dashed;
+    border: dashed black 1.5px;
     margin-top: auto;
     background: transparent;
     text-align: center;
-    opacity: 0.65;
+    opacity: 0.45;
     font-family: Tahoma, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 650;
+    font-size: 0.8rem;
+    box-shadow: none;
+    letter-spacing: 1.5px;
+    font-weight: 450;
+}
+
+.toptitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit {
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    margin-bottom: 2.5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    border: hsl(259, 15%, 15%);
+    background: hsl(41, 78%, 45%);
+    color: hsl(41, 50%, 15%);
+}
+
+.delete {
+    display: flex;
+    font-size: 20px;
+    color: hsl(0, 65%, 15%);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: 2.5px;
+    justify-content: center;
+    align-items: center;
+    border: hsl(259, 15%, 15%);
+    color: hsl(0, 50%, 10%);
+    background: hsl(0, 65%, 45%);
+}
+
+.prop {
+    display: none;
+}
+
+.td.active .prop {
+    display: flex;
+}
+
+.prog.active .prop {
+    display: flex;
+}
+
+.inptext {
+    display: none;
+}
+
+.toast {
+    position: fixed;
+    bottom: 24;
+    right: 24;
+    background: hsl(0, 72%, 59%);
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Outfit', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
 }
